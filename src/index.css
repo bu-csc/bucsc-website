@@ -1,5 +1,5 @@
-/* Fonts: Lexend, Roboto */
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* Fonts: Lexend, Roboto, Robot Mono */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Global Themes */
 :root {
@@ -18,4 +18,8 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: var(--grey);
+}
+
+img {
+    -webkit-user-drag: none;
 }

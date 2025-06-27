@@ -1,5 +1,7 @@
 import React from 'react';
 import './projects.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'motion/react';
 
 function Projects() {
     return (

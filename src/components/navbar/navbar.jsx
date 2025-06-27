@@ -2,11 +2,18 @@ import React, { useState, useEffect } from 'react';
 import './navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faDiscord, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
-import { motion } from "motion/react"
+import { faBars, faXmark, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { motion } from "motion/react";
 import { NavLink, Link } from 'react-router-dom';
 
-function Navbar() {
+export const socials = [
+        { key: "github", value: "https://github.com/bu-csc"},
+        { key: "discord", value: "https://discord.gg/EqHXJNdF3Q"},
+        { key: "instagram", value: "https://www.instagram.com/bucomputerscience/"},
+        { key: "email", value: "mailto:bucsclub@bu.edu"}
+    ];
+
+export function Navbar() {
     const [isBars, setIsBars] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -48,26 +55,17 @@ function Navbar() {
                     ))}
                 </ul>
                 <ul className="nav-socials">
-                    <motion.li className="github" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                        <a href="https://github.com/bu-csc" target="_blank" rel="noreferrer">
-                            <FontAwesomeIcon icon={faGithub} className="icons" bounce/>
-                        </a>
-                    </motion.li>
-                    <motion.li className="discord" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                        <a href="https://discord.gg/EqHXJNdF3Q" target="_blank" rel="noreferrer">
-                            <FontAwesomeIcon icon={faDiscord} className="icons"/>
-                        </a>
-                    </motion.li>
-                    <motion.li className="instagram" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                        <a href="https://www.instagram.com/bucomputerscience/" target="_blank" rel="noreferrer">
-                            <FontAwesomeIcon icon={faInstagram} className="icons"/>
-                        </a>
-                    </motion.li>
-                    <motion.li className="email" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-                        <a href="mailto:bucsclub@bu.edu" rel="noreferrer">
-                            <img className="icons" alt="Email logo" src="/socials/email.svg"/>
-                        </a>
-                    </motion.li>
+                    {socials.map((item) => (
+                        <motion.li 
+                            key={item.key} 
+                            className={item.key} 
+                            whileHover={{ scale: 1.1 }} 
+                            whileTap={{ scale: 0.95 }}>
+                            <a href={item.value} target="_blank" rel="noreferrer">
+                                <FontAwesomeIcon icon={item.key === "github" ? faGithub : item.key === "discord" ? faDiscord : item.key ==="instagram" ? faInstagram : faEnvelope} className="icons"/>
+                            </a>
+                        </motion.li>
+                    ))}
                 </ul>
             </div>
         );
@@ -75,7 +73,7 @@ function Navbar() {
 
     return (
         <nav className="navbar">
-            <Link to="/">
+            <Link to="/" onClick={() => setIsDropdownOpen(false)}>
                 <img src="/icon/logo.png" alt="Club Logo" className="logo"/>
             </Link>
             {isBars ? (
@@ -89,5 +87,3 @@ function Navbar() {
         </nav>
     );
 }
-
-export default Navbar;

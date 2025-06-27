@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0 2rem;
+}
+
+.about-landing {
+    height: 750px;
+    width: 100%;
+    position: relative;
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 5rem 0; 
+}
+
+.left-img-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    height: 275px;
+    width: 50%;
+    opacity: 0.5;
+}
+
+.left-img {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    background-image: url(https://picsum.photos/700/300);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.left-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--gibby-lightblue);
+    opacity: 0.05;
+    z-index: 1;
+}
+
+.polka-dots {
+    align-self: flex-end;
+    width: 100%;
+    height: 25px;
+    background-image: radial-gradient(var(--darkblue) 40%, var(--grey) 41%);
+    background-size: 8px 8px;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+.right-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 57%;
+    height: 355px;
+    object-fit: cover;
+    object-position: right 75%;
+    border-bottom-left-radius: 5rem;
+    clip-path: polygon(7.5% 0, 0 100%, 100% 100%, 100% 0%);
+}
+
+.mission {
+    margin-top: 10rem;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sub-heading {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.about-description {
+    text-align: left;
+    margin: 2rem 0;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.sub-heading, .about-description {
+    color: var(--black);
+}
+
+.about-design {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    bottom: 0;
+    right: 0;
+    height: 395px;
+}
+
+.design-1 {
+    height: 100px;
+    width: 300px;
+    background: linear-gradient(to right, var(--darkblue-accent) 0 33.3%, var(--paleblue-accent) 33.3% 66.6%, var(--gibby-lightblue) 66.6%);
+}
+
+.design-2, .design-3, .design-4 {
+    height: 100px;
+    width: 400px;
+    border-top-left-radius: 2rem;
+    background: linear-gradient(to right, var(--darkblue-accent) 0 25%, var(--paleblue-accent) 25% 50%, var(--gibby-lightblue) 50% 75%, var(--darkblue-accent) 75%);
+}
+
+.design-3 {
+    margin-right: 100px;
+    border-bottom-right-radius: 2rem;
+}
+
+.design-4 {
+    margin-right: 200px;
+}
+
+
+.about-middle {
+    width: 100%;
+    height: 500px;
+    background-color: var(--darkblue-accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle-text {
+    width: 35%;
+    height: 80%;
+}
+
+.mid-underline {
+    width: 80%;
+}
+
+.about-subheading {
+    font-family: 'Roboto', monospace;
+    font-size: 50px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.middle-subtext {
+    font-family: 'Lexend', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    padding: 1rem 0;
+}
+
+.middle-img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    width: 35%;
+}
+
+.middle-img {
+    border-radius: 2.75rem;
+    aspect-ratio: 5.5 / 4;
+    object-fit: cover;
+    width: 90%;
+}
+
+.light-blue-btn {
+    border: 4px solid var(--gibby-blue);
+    font-family: 'Roboto', monospace;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 25px;
+    color: var(--black);
+    background-color: var(--white);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0.125rem 1rem;
+    margin-left: 0.5rem;
+}
+
+.short-underline {
+    width: 30%;
+}
+
+.about-team {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.team-header {
+    margin-top: 5rem;
+}
+
+.left-connector, .right-connector {
+    width: 150px;
+    position: relative;
+}
+
+.left-connector-line, .right-connector-line {
+    width: 100%;
+    height: 5px;
+    background-color: var(--darkblue);
+}
+
+.left-connector-dots, .right-connector-board {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+}
+
+.left-connector-dots {
+    width: 110px;
+    justify-content: space-between;
+}
+
+.left-connector-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--darkblue);
+}
+
+.right-connector-board {
+    width: 100px;
+    height: 25px;
+    gap: 10px;
+    justify-content: center;
+    background-color: var(--darkblue);
+}
+
+.right-connector-lines {
+    width: 5px;
+    height: 45px;
+    background-color: var(--darkblue);
+}
+
+.officer-chart {
+    padding-top: 5rem;
+    width: 925px;
+    height: 1300px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.left-connector {
+    top: 180px;
+    left: 225px;
+}
+
+.right-connector {
+    top: 175px;
+    left: 550px;
+}
+
+.connector-1 {
+    position: absolute;
+    left: 97.5px;
+}
+
+.card-3 {
+    position: absolute;
+    top: 390px;
+}
+
+.connector-2 {
+    position: absolute;
+    top: 628px;
+    left: 55px;
+    z-index: -1;
+}
+
+.card-6 {
+    position: absolute;
+    top: 679px;
+}
+
+.connector-3 {
+    position: absolute;
+    top: 921px;
+    left: 92px;
+}
+
+.card-9 {
+    position: absolute;
+    top: 955px;
+}
+
+.connector-4 {
+    position: absolute;
+    top: 320px;
+    left: 460px;
+}
+
+.card-4 {
+    position: absolute;
+    top: 390px;
+}
+
+.connector-5 {
+    position: absolute;
+    top: 657px;
+    left: 460px;
+}
+
+.card-7 {
+    position: absolute;
+    top: 700px;
+}
+
+.connector-6 {
+    position: absolute;
+    top: 340px;
+    right: 85px;
+    z-index: -1;
+}
+
+.card-5 {
+    position: absolute;
+    top: 390px;
+}
+
+.connector-7 {
+    position: absolute;
+    top: 628px;
+    right: 52px;
+}
+
+.card-8 {
+    position: absolute;
+    top: 679px;
+}
+
+.connector-8 {
+    position: absolute;
+    top: 921px;
+    right: 92px;
+}
+
+.card-9 {
+    position: absolute;
+    top: 955px;
+}
+
+
+@media (max-width: 1050px) {
+    .right-img {
+        display: none;
+    }
+
+    .left-img-container {
+        width: 100%;
+    }
+
+    .about-middle {
+        display: block;
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .middle-text, .middle-img-container {
+        margin:  1.75rem auto;
+        width: 80%;
+    }
+
+    .about-design {
+        display: none;
+    }
+
+    .about-description {
+        text-align: center;
+    }
+
+    .mission, .about-landing {
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .mission {
+        margin-top: 15rem;
+    }
+
+    .left-connector, .right-connector, [class^="connector-"] {
+        display: none;
+    }
+
+    /* Team Cards - Tablet View: 2 cards per row */
+    .officer-chart {
+        width: 100%;
+        height: auto;
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 6rem;
+        padding: 2rem;
+        justify-items: center;
+    }
+
+    .column {
+        display: contents;
+    }
+
+    .card-3, .card-4, .card-5, .card-6, .card-7, .card-8, .card-9 {
+        position: static;
+        top: auto;
+    }
+}
+
+/* Mobile View: 1 card per row */
+@media (max-width: 700px) {
+    .officer-chart {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .middle-text, .middle-img-container {
+        width: 90%;
+    }
+
+    .about-subheading {
+        font-size: 36px;
+    }
+
+    .sub-heading {
+        font-size: 28px;
+    }
+
+    .about-description {
+        font-size: 18px;
+    }
+
+    .short-underline {
+        width: 55%
+    }
+
+    .about-short-underline {
+        width: 50%;
+    }
+}

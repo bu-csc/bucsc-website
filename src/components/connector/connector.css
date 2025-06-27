@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.connector-rec {
+    position: relative;
+    width: 42px;
+    height: 46px;
+}
+
+.connector-rec > * {
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    background-color: var(--darkblue);
+}
+
+.rec-1 {
+    height: 15px;
+}
+
+.rec-2 {
+    width: 40px;
+    top: 15px
+}
+
+.rec-3 {
+    height: 10px;
+    left: 35px;
+    top: 20px;
+}
+
+.rec-4 {
+    top: 30px;
+    left: 10px;
+    width: 30px;
+}
+
+.rec-5 {
+    height: 10px;
+    top: 35px;
+    left: 10px;
+}
+
+.flip-horizontal {
+    transform: scaleX(-1);
+}
+
+.connector-line {
+  position: relative;
+  width: 15px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  width: 5px;
+  height: 100%;
+  background-color: var(--darkblue);
+  position: relative;
+}
+
+.line-btn {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--darkblue);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.connector-tri {
+  position: relative;
+  width: 60px;
+}
+
+.tri-1 {
+  width: 40px;
+  height: 5px;
+  transform: rotate(-25deg);
+  transform-origin: top right;
+  background-color: var(--darkblue);
+  border-top-left-radius: 0.1rem;
+  border-bottom-left-radius: 0.2rem;
+  position: absolute;
+}
+
+.tri-2 {
+  width: 45px;
+  height: 5px;
+  background-color: var(--darkblue);
+  position: absolute;
+  border-top-left-radius: 0.1rem;
+  top: 16.6px;
+  left: 4.3px;
+}
+
+.tri-line {
+  position: absolute;
+  top: 17px;
+  left: 39.5px;
+}
+
+.connector-long-tri {
+  position: relative;
+}
+
+.long-tri-1 {
+  width: 5px;
+  height: 25px;
+  background-color: var(--darkblue);
+  position: absolute;
+}
+
+.long-tri-2 {
+  width: 45px;
+  height: 5px;
+  background-color: var(--darkblue);
+  border-bottom-right-radius: 0.1rem;
+  position: absolute;
+  top: 20px;
+}
+
+.long-tri-3 {
+  width: 40px;
+  height: 5px;
+  transform: rotate(-43deg);
+  transform-origin: top right;
+  background-color: var(--darkblue);
+  border-bottom-right-radius: 0.1rem;
+  position: absolute;
+  top: 20px;
+  left: 2.3px;
+}
+
+.long-tri-4 {
+  width: 5px;
+  height: 25px;
+  background-color: var(--darkblue);
+  position: absolute;
+  top: 47px;
+  left: 13px;
+}

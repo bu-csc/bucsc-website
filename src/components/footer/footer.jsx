@@ -1,20 +1,13 @@
 import React from 'react';
 import './footer.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faDiscord, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { socials } from '../navbar/navbar.jsx';
+import DottedLine from '../dottedline.jsx';
 import { Link } from 'react-router-dom';
-function Footer() {
 
-    const LineDot = ({reverse = false}) => {
-        return (
-            <div className={`linedot ${reverse ? 'reverse' : ''}`}>
-                <div className="rectangle"></div>
-                <div className="circle-container">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                    <div key={i} className="circle"></div>
-                    ))}
-                </div>
-            </div>
-        );
-    };
+function Footer() {
 
   const leftLinks = [
     { key: "Home", value: "/" },
@@ -25,53 +18,50 @@ function Footer() {
   const rightLinks = [
     { key: "FAQ", value: "/faq" },
     { key: "Team", value: "/about" },
-    { key: "Contact Us", value: "mailto:bucsclub@bu.edu" },
+    { key: "Contact", value: "mailto:bucsclub@bu.edu" },
   ];
+
+  const FooterLinks = ({links, className}) => {
+    const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    return (
+      <ul className={className}>
+        {links.map((item) => (
+          <li key={item.key}>
+            <Link to={item.value} onClick={handleClick}>
+              {item.key}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    );
+  };
 
   return (
     <footer>
-      <LineDot />
-      <div className="content">
-        <div className="footer-links-container">
-          <ul className="footer-links-left">
-            {leftLinks.map((item) => (
+      <DottedLine footer/>
+      <div className="container">
+        <div className="footer-links">
+          <FooterLinks links={leftLinks} className="left" />
+          <img src="/icon/logo.png" className="footer-logo" alt="Club logo"/>
+          <FooterLinks links={rightLinks} className="right" />
+        </div>
+        <div className="footer-socials">
+          <span>Made with ❤️ by the BU CSC team</span>
+          <ul className="footer-icons">
+            {socials.map((item) => (
               <li key={item.key}>
-                <Link to={item.value} className="footer-links">
-                  {item.key}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          <img src="/icon/logo.png" alt="Club Logo" className="footer-logo"/>
-
-          <ul className="footer-links-right">
-            {rightLinks.map((item) => (
-              <li key={item.key}>
-                <Link to={item.value} className="footer-links">
-                  {item.key}
-                </Link>
+                <a href={item.value} target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={item.key === "github" ? faGithub : item.key === "discord" ? faDiscord : item.key ==="instagram" ? faInstagram : faEnvelope} className="footer-icon"/>
+                </a>
               </li>
             ))}
           </ul>
         </div>
-        <span>Made with<img src="/icon/heart.svg" alt="heart" className="heart"/>by the BU CSC team</span>
-        <ul className="footer-nav-socials">
-            <li className="github">
-                <a href="https://github.com/bu-csc" target="_blank" rel="noreferrer"><img className="footer-icon" alt="Github logo" src="/socials/github.svg"/></a>
-            </li>
-            <li className="discord">
-                <a href="https://discord.gg/EqHXJNdF3Q" target="_blank" rel="noreferrer"><img className="footer-icon" alt="Discord logo" src="/socials/discord.svg"/></a>
-            </li>
-            <li className="instagram">
-                <a href="https://www.instagram.com/bucomputerscience/" target="_blank" rel="noreferrer"><img className="footer-icon" alt="Instagram logo" src="/socials/instagram.svg"/></a>
-            </li>
-            <li className="email">
-                <a href="mailto:bucsclub@bu.edu" rel="noreferrer"><img className="footer-icon" alt="Email logo" src="/socials/email.svg"/></a>
-            </li>
-        </ul>
       </div>
-      <LineDot reverse />
+      <DottedLine reverse footer />
     </footer>
   );
 }
