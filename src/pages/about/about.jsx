@@ -10,7 +10,7 @@ import Connector from '../../components/connector/connector';
 
 function About() {
     return (
-        <div className="projects">
+        <div className="about">
             <header>
                 <h1>About</h1>
                 <img className="about-short-underline" src={shortUnderline} alt="underline"/>

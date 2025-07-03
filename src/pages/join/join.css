@@ -1,0 +1,439 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.join {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+.join header img {
+    width: 100%;
+}
+
+.mailing-list {
+    width: 100%;
+    height: 950px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mailbox {
+    width: 500px;
+    height: 700px;
+    background-color: var(--darkblue-accent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    gap: 2rem;
+}
+
+.mailbox h3, .mail-tag {
+    font-family: 'Roboto', monospace;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--white);
+    align-self: center;
+    margin-top: 2.25rem;
+}
+
+.mail-tag {
+    font-style: italic;
+    position: absolute;
+    right: 2.5rem;
+    bottom: 8.5rem;
+    z-index: 5;
+    line-height: 2.25rem;
+}
+
+.mail-bottom {
+    background-color: var(--grey);
+    width: 370px;
+    height: 130px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    align-self: center;
+    position: absolute;
+    bottom: -1rem;;
+}
+
+.left-railing {
+  align-self: flex-start;
+  width: 75px;
+  height: 725px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: -1.5rem;
+}
+
+.mailbox-lines {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 0;
+  height: 725px;
+}
+
+.outer-line {
+  width: 40px;
+  height: 725px;
+  border-radius: 25px;
+  background-color: var(--darkblue-accent);
+}
+
+.inner-line {
+  width: 15px;
+  height: 710px;
+  border-top-right-radius: 5px;
+  background-color: var(--darkblue-accent);
+}
+
+.mailbox-foot {
+  width: 100%;
+  height: 25px;
+  background-color: var(--darkblue-accent);
+  border-top-left-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.bolts {
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  padding-top: 0.25rem;
+  top: 1rem;
+  left: 2rem;
+  align-self: center;
+  z-index: 1;
+}
+
+.bolts::before,
+.bolts::after,
+.bolts div {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: var(--paleblue-accent);
+  border-radius: 50%;
+}
+
+.right-railing {
+  align-self: flex-start;
+  width: 75px;
+  height: 725px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  right: -1.5rem;
+  transform: scaleX(-1);
+}
+
+.mailbox form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.mailbox form input, .popup {
+    width: 350px;
+    height: 50px;
+    background-color: var(--paleblue-accent);
+    border-radius: 25px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--white);
+    border: none;
+    outline: none;
+}
+
+.mailbox form input::placeholder {
+    color: var(--white);
+    opacity: 0.5;
+}
+
+.mailbox form button {
+    width: 250px;
+    height: 45px;
+    background-color: #D9544D;
+    border: 2px solid var(--white);
+    border-radius: 0.5rem;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
+    color: var(--white);
+    cursor: pointer;
+    z-index: 3;
+}
+
+.mailbox-background {
+    width: 325px;
+    height: 70px;
+    position: absolute;
+    top: 14rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-line {
+    width: 300px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--darkblue-accent);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+}
+
+.bottom-line {
+    width: 325px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: var(--darkblue-accent);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    position: absolute;
+    top: 0.25rem;
+}
+
+.mailbox-button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--darklue-accent);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 2.25rem;
+}
+
+.email-message {
+    margin: 0;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup {
+    height: 175px;
+    width: 450px;
+    background-color: var(--paleblue-accent);
+    border-radius: 1rem;
+    z-index: 1000;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.popup-logo {
+    width: 50%;
+}
+
+.popup button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    background: none;
+    border: none;
+}
+
+.popup button svg {
+    font-size: 30px;
+    padding: 1rem;
+    color: var(--gibby-lightblue);
+    cursor: pointer;
+}
+
+.dates {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    width: 100%;
+    height: 800px;
+    background-color: var(--darkblue-accent);
+}
+
+.dates-text {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.dates-text header {
+    width: 65%;
+    text-align: left;
+}
+
+.dates-text header img {
+    width: 90%;
+}
+
+.dates-text header h1 {
+    font-size: 50px;
+    color: var(--white);
+    margin: 0;
+    text-align: left;
+}
+
+.dates-text p {
+    margin: 0;
+    text-align: left;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.dates-text button {
+    border: none;
+    background: transparent;
+}
+
+.dates-text a {
+    border: 4px solid var(--gibby-blue);
+    font-family: 'Roboto', monospace;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 25px;
+    color: var(--black);
+    background-color: var(--white);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0.125rem 1rem;
+    margin-left: 0.5rem;
+    gap: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+
+.calendar-container {
+    width: 45%;
+    max-width: 650px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-container iframe {
+    width: 100%;
+    max-width: 650px;
+    aspect-ratio: 1.25 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 0.5rem;
+    background-color: var(--gibby-blue);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-dotted-line {
+    align-self: flex-end;
+    justify-self: flex-end;
+    padding-top: 0.5rem;
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .dates {
+        flex-direction: column;
+        height: auto;
+        gap: 2rem;
+    }
+
+    .dates-text {
+        width: 70%;
+        margin-top: 1.5rem;
+    }
+
+    .calendar-container {
+        width: 75%;
+        max-width: 800px;
+    }
+
+    .calendar-container iframe {
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 750px) {
+    .dates-text header h1 {
+        font-size: 40px;
+    }
+
+    .dates-text header {
+        width: 70%
+    }
+}
+
+@media (max-width: 550px) {
+    .dates-text header h1 {
+        font-size: 30px;
+    }
+
+    .dates-text header {
+        width: 80%
+    }
+
+    .join header img {
+        width: 70%;
+    }
+
+    .mailing-list {
+        transform: scale(0.75);
+    }
+
+    .mailing-list {
+        height: auto;
+        padding: 2rem 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .mailing-list {
+        transform: scale(0.7);
+    }
+
+    .mail-bottom {
+        transform: scale(0.8);
+        bottom: -1rem;
+    }
+}

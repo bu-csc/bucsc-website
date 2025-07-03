@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0 2rem;
+}
+
+.projects header img {
+    width: 85%;
+}
+
+.project-landing {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 0 2rem;
+}
+
+.project-description {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-description h2, .featured-projects-title {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.project-description p {
+    text-align: left;
+    margin: 2rem 0 0.5rem;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--black);
+}
+
+.join-button button {
+    border: 4px solid var(--darkblue);
+    font-family: 'Roboto', monospace;
+    font-weight: 700;
+    font-size: 24px;
+    border-radius: 25px;
+    color: var(--black);
+    background-color: var(--white);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0.125rem 1rem;
+    margin-left: 0.5rem;
+    gap: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+
+.join-button button svg {
+    color: var(--darkblue);
+    width: 21px;
+    height: 21px;
+}
+
+.project-landing-img {
+    width: 525px;
+    height: 325px;
+    position: relative;
+}
+
+.prj-img {
+    width: 500px;
+    height: 300px;
+    background-color: var(--gibby-lightblue);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.prj-polka-dots {
+    align-self: flex-end;
+    width: 90%;
+    height: 250px;
+    background-image: radial-gradient(var(--darkblue) 40%, var(--grey) 41%);
+    background-size: 8px 8px;
+    background-repeat: repeat;
+    background-position: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.dev-timeline {
+    width: 100%;
+    height: 800px;
+    background-color: var(--darkblue-accent);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.dev-timeline header {
+    margin: 2rem 2.5rem 0;
+    color: var(--white);
+}
+
+.dev-timeline header h1 {
+    color: var(--white);
+}
+
+.dev-timeline header img {
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.prj-card-container {
+    align-self: center;
+}
+
+.dev-line {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 0.5rem;
+}
+
+.featured-projects-title {
+    margin-left: 10%;
+    padding-top: 2.5rem;
+}
+
+@media (max-width: 1400px) {
+    .prj-card-container {
+       transform: scale(0.9);
+    }
+}
+
+@media(max-width: 1200px) {
+    .prj-card-container {
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 940px) {
+    .project-landing {
+        flex-direction: column;
+        height: auto;
+        gap: 3rem;
+        padding: 2rem;
+    }
+    
+    .project-description {
+        width: 80%;
+        margin-top: 0;
+    }
+    
+    .project-landing-img {
+        width: 400px; 
+        height: 250px; 
+        order: 1;
+        flex-shrink: 0;
+    }
+    
+    .prj-img {
+        width: 380px;
+        height: 230px; 
+        top: 0;
+        right: 0;
+    }
+    
+    .prj-polka-dots {
+        width: 90%;
+        height: 190px;
+        bottom: 0;
+        left: 0;
+    }
+
+    .featured-projects-title {
+        width: 80%;
+    }
+
+    .projects header img {
+        width: 60%;
+    }
+
+    .prj-card-container {
+        transform: scale(0.6);
+    }
+
+    .dev-timeline header img {
+        width: 85%;
+    }
+}
+
+@media (max-width: 865px){
+    .dev-timeline {
+        height: 1200px;
+    }
+
+
+    .prj-card-container {
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .project-landing {
+        padding: 1rem;
+        gap: 2rem;
+    }
+    
+    .project-description {
+        width: 95%;
+    }
+    
+    .project-landing-img {
+        width: 300px;
+        height: 190px;
+    }
+    
+    .prj-img {
+        width: 285px;
+        height: 175px;
+    }
+    
+    .prj-polka-dots {
+        width: 90%;
+        height: 145px;
+    }
+}
