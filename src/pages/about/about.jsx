@@ -8,12 +8,32 @@ import TeamCard from '../../components/teamcard/teamcard';
 import { officerList } from '../../components/data';
 import Connector from '../../components/connector/connector';
 
+export const clipReveal = {
+    hidden: {
+        clipPath: "inset(0 100% 0 0)",
+    },
+    visible: {
+        clipPath: "inset(0 0% 0 0)",
+        transition: {
+        duration: 0.8,
+        ease: "easeInOut",
+        },
+    },
+};
+
 function About() {
     return (
         <div className="about">
             <header>
                 <h1>About</h1>
-                <img className="about-short-underline" src={shortUnderline} alt="underline"/>
+                <motion.img 
+                    className="about-short-underline"
+                    src={shortUnderline}
+                    alt="underline"
+                    initial="hidden"
+                    animate="visible"
+                    variants={clipReveal}
+                />
             </header>
             <section className="about-landing">
                 <div className="left-img-container">
@@ -21,24 +41,31 @@ function About() {
                     <div className="polka-dots"></div>
                 </div>
                 <img className="right-img" src="/photos/clubfair.png" alt="Club fair"/>
-                <article className="mission">
+                <motion.article className="mission" initial={{ x: -500}} animate={{x: 0}} transition={{duration: 1, type: "spring"}}>
                     <h2 className="sub-heading">Our Mission</h2>
                     <p className="about-description">
                         BUCSC is an undergraduate club that provides a platform for students to enhance their coding and problem-solving skills through speakers, networking events, and guidance.
                         We create an environment for students who are CS majors or are interested in programming to create camaraderie with each other and foster their computer science journey. 
                     </p>
-                </article>
-                <div className="about-design">
+                </motion.article>
+                <motion.div className="about-design" initial={{ x: 500}} animate={{x: 0}} transition={{duration: 1, type: "spring"}}>
                     <div className="design-1"></div>
                     <div className="design-2"></div>
                     <div className="design-3"></div>
                     <div className="design-4"></div>
-                </div>
+                </motion.div>
             </section>
             <section className="about-middle">
                 <article className="middle-text">
                     <h2 className="about-subheading">Lorem ipsum dolor</h2>
-                    <img src={midUnderline} alt="underline" className="mid-underline"/>
+                    <motion.img
+                        src={midUnderline}
+                        alt="underline"
+                        className="mid-underline"
+                        initial={{ clipPath: "inset(0 100% 0 0)" }}
+                        whileInView={{ clipPath: "inset(0 0% 0 0)" }}
+                        transition={{ duration: 1, ease: "easeInOut" }}
+                    />
                     <p className="middle-subtext">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
