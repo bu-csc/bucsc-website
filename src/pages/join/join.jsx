@@ -27,17 +27,28 @@ function Join() {
   const [showPopup, setShowPopup] = useState(false);
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (email) {
-      setMessage("Thank you for subscribing!");
-      setEmail("");
-    } else {
-      setMessage("Please enter a valid email!");
-    }
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    setShowPopup(true);
+  const formData = new FormData();
+  formData.append("email", email);
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbzp9ZCAA8xDYagg3vXH2DVTDAb7zd-Cp7lGytUmR9Co1QNYDCWHl4_2M_Q0czYX2AoC/exec", {
+      method: "POST",
+      mode: "no-cors",
+      body: formData,
+    });
+
+    setMessage("Thank you for subscribing!");
+    setEmail("");
+  } catch (err) {
+    console.error("Submission failed", err);
+    setMessage("Something went wrong. Try again.");
   }
+
+  setShowPopup(true);
+};
 
   const closePopup = () => setShowPopup(false);
 
@@ -54,7 +65,7 @@ function Join() {
         </div>
       )}
 
-       <header>
+      <header>
         <h1>Join the CSC Family</h1>
         <img src={midUnderline} alt="underline" />
       </header>
